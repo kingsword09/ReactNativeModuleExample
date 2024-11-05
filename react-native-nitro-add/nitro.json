@@ -1,0 +1,12 @@
+{
+  "cxxNamespace": ["add"],
+  "ios": {
+    "iosModuleName": "NitroAdd"
+  },
+  "android": {
+    "androidNamespace": ["add"],
+    "androidCxxLibName": "NitroAdd"
+  },
+  "autolinking": {},
+  "ignorePaths": ["node_modules"]
+}
