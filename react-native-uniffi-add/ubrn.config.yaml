@@ -9,6 +9,9 @@ android:
   cargoExtras: []
   targets:
   - arm64-v8a
+  - armeabi-v7a
+  - x86
+  - x86_64
   apiLevel: 28
   jniLibs: src/main/jniLibs
   # packageName: UniffiAdd
