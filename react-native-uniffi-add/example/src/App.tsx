@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text } from 'react-native';
 import { add } from 'react-native-uniffi-add';
 
-const result = add(BigInt(3), BigInt(7));
+const result = add(BigInt(3), BigInt(12));
 
 export default function App() {
   return (
