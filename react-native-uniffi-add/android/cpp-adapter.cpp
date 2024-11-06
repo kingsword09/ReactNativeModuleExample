@@ -2,23 +2,23 @@
 #include <jni.h>
 #include <jsi/jsi.h>
 #include <ReactCommon/CallInvokerHolder.h>
-#include "my-rust-lib.h"
+#include "uniffi-add.h"
 
 namespace jsi = facebook::jsi;
 namespace react = facebook::react;
 
-// Automated testing checks Java_com_uniffiadd_MyRustLibModule and myrustlib
+// Automated testing checks Java_com_uniffiadd_UniffiAddModule and uniffiadd
 // by comparing the whole line here.
 /*
-Java_com_uniffiadd_MyRustLibModule_nativeMultiply(JNIEnv *env, jclass type, jdouble a, jdouble b) {
-    return myrustlib::multiply(a, b);
+Java_com_uniffiadd_UniffiAddModule_nativeMultiply(JNIEnv *env, jclass type, jdouble a, jdouble b) {
+    return uniffiadd::multiply(a, b);
 }
 */
 
-// Installer coming from MyRustLibModule
+// Installer coming from UniffiAddModule
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_uniffiadd_MyRustLibModule_nativeInstallRustCrate(
+Java_com_uniffiadd_UniffiAddModule_nativeInstallRustCrate(
     JNIEnv *env,
     jclass type,
     jlong rtPtr,
@@ -52,12 +52,12 @@ Java_com_uniffiadd_MyRustLibModule_nativeInstallRustCrate(
     auto jsCallInvoker = nativePointer->getCallInvoker();
 
     auto runtime = reinterpret_cast<jsi::Runtime *>(rtPtr);
-    return myrustlib::installRustCrate(*runtime, jsCallInvoker);
+    return uniffiadd::installRustCrate(*runtime, jsCallInvoker);
 }
 
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_uniffiadd_MyRustLibModule_nativeCleanupRustCrate(JNIEnv *env, jclass type, jlong rtPtr) {
+Java_com_uniffiadd_UniffiAddModule_nativeCleanupRustCrate(JNIEnv *env, jclass type, jlong rtPtr) {
     auto runtime = reinterpret_cast<jsi::Runtime *>(rtPtr);
-    return myrustlib::cleanupRustCrate(*runtime);
+    return uniffiadd::cleanupRustCrate(*runtime);
 }

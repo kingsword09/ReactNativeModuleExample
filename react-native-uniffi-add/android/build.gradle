@@ -33,11 +33,11 @@ if (isNewArchitectureEnabled()) {
 }
 
 def getExtOrDefault(name) {
-  return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties["MyRustLib_" + name]
+  return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties["UniffiAdd_" + name]
 }
 
 def getExtOrIntegerDefault(name) {
-  return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties["MyRustLib_" + name]).toInteger()
+  return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties["UniffiAdd_" + name]).toInteger()
 }
 
 def supportsNamespace() {
@@ -78,7 +78,7 @@ android {
       }
     }
     ndk {
-      abiFilters "arm64-v8a", "armeabi-v7a", "x86", "x86_64"
+      abiFilters "arm64-v8a"
     }
   }
 
@@ -137,7 +137,7 @@ dependencies {
 if (isNewArchitectureEnabled()) {
   react {
     jsRootDir = file("../src/")
-    libraryName = "MyRustLib"
+    libraryName = "UniffiAdd"
     codegenJavaPackageName = "com.uniffiadd"
   }
 }

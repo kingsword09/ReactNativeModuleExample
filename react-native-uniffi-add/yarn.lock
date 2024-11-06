@@ -5392,9 +5392,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.41":
-  version: 1.5.51
-  resolution: "electron-to-chromium@npm:1.5.51"
-  checksum: 51ec624a59f1eda30e2a32c295c8066acdb840c686ed51d3ae0181845fce91b009e2fc3e658578426b65a0eb6a0cd61b071b3c1c974bff684781ae7790b1ed8d
+  version: 1.5.52
+  resolution: "electron-to-chromium@npm:1.5.52"
+  checksum: fd89ec7587726d99d138d0bbe0e26e490284766b2bce29da21298b80b6ecd16db69c6b1a602d33b37129b9e07c8beaef4c9490681ca1a29a4fcd38ecabc327b8
   languageName: node
   linkType: hard
 
@@ -12918,11 +12918,11 @@ __metadata:
 
 "uniffi-bindgen-react-native@https://github.com/jhugman/uniffi-bindgen-react-native":
   version: 0.28.2-0
-  resolution: "uniffi-bindgen-react-native@https://github.com/jhugman/uniffi-bindgen-react-native.git#commit=f9b2aa203aa1edb18e8b92e7f25bf49a7efdf344"
+  resolution: "uniffi-bindgen-react-native@https://github.com/jhugman/uniffi-bindgen-react-native.git#commit=0bb7d5b3262dc7b89c0ff09ee56cad78533c3c98"
   bin:
     ubrn: ./bin/cli.cjs
     uniffi-bindgen-react-native: ./bin/cli.cjs
-  checksum: 4ee7912340bdf7c8ac2bff7c8c04f9dfe92cfe574698866e219b63b94b330b2e6ca68fbb23450513a7fbd6fab2b9ae8a25c28ab9d98ab52cd0d95ae604fe6d73
+  checksum: b220844acb1d0b7071579f860b05a312663f2660068cc5d95b40ef2df51e3028af212c44812b2ea0333f34d5e40457c9c11a9d5eca84f396071dc89d1e1892b0
   languageName: node
   linkType: hard
 

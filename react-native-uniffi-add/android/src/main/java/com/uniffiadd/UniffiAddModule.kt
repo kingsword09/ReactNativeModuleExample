@@ -5,16 +5,16 @@ import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.module.annotations.ReactModule
 import com.facebook.react.turbomodule.core.interfaces.CallInvokerHolder
 
-@ReactModule(name = MyRustLibModule.NAME)
-class MyRustLibModule(reactContext: ReactApplicationContext) :
-  NativeMyRustLibSpec(reactContext) {
+@ReactModule(name = UniffiAddModule.NAME)
+class UniffiAddModule(reactContext: ReactApplicationContext) :
+  NativeUniffiAddSpec(reactContext) {
 
   override fun getName(): String {
     return NAME
   }
 
   // Two native methods implemented in cpp-adapter.cpp, and ultimately
-  // my-rust-lib.cpp
+  // uniffi-add.cpp
 
   external fun nativeInstallRustCrate(runtimePointer: Long, callInvoker: CallInvokerHolder): Boolean
   external fun nativeCleanupRustCrate(runtimePointer: Long): Boolean
@@ -34,10 +34,10 @@ class MyRustLibModule(reactContext: ReactApplicationContext) :
   }
 
   companion object {
-    const val NAME = "MyRustLib"
+    const val NAME = "UniffiAdd"
 
     init {
-      System.loadLibrary("my-rust-lib")
+      System.loadLibrary("uniffi-add")
     }
   }
 }

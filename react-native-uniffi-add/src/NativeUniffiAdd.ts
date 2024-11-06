@@ -7,4 +7,4 @@ export interface Spec extends TurboModule {
   cleanupRustCrate(): boolean;
 }
 
-export default TurboModuleRegistry.getEnforcing<Spec>('MyRustLib');
+export default TurboModuleRegistry.getEnforcing<Spec>('UniffiAdd');

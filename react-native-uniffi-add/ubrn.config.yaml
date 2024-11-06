@@ -1,6 +1,31 @@
 ---
-name: MyRustLib
+name: UniffiAdd
 rust:
-  repo: https://github.com/ianthetechie/uniffi-starter
-  branch: main
-  manifestPath: rust/foobar/Cargo.toml
+  directory: ./rust
+  manifest-file: Cargo.toml
+
+android:
+  directory: ./android
+  cargoExtras: []
+  targets:
+  - arm64-v8a
+  apiLevel: 28
+  jniLibs: src/main/jniLibs
+  # packageName: UniffiAdd
+# Error: Failed to read "ubrn.config.yaml" as valid YAML
+
+# Caused by:
+#     android.targets[0]: unknown variant `aarch64-linux-android`, expected one of `armeabi-v7a`, `arm64-v8a`, `x86`, `x86_64` at line 10 column 5
+# ➜  react-native-uniffi-add git:(main) ✗ yarn ubrn:android
+ios:
+  directory: ios
+  cargoExtras: []
+  targets:
+  - aarch64-apple-ios
+  - aarch64-apple-ios-sim
+  xcodebuildExtras: []
+  frameworkName: UniffiAddFramework
+
+turboModule:
+  ts: src
+  cpp: cpp

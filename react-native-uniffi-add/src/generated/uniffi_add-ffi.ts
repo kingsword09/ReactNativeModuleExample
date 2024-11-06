@@ -22,128 +22,22 @@ interface NativeModuleInterface {
     buffer: ArrayBuffer,
     uniffi_out_err: UniffiRustCallStatus
   ): string;
-  uniffi_foobar_fn_clone_binaryoperator(
-    ptr: bigint,
+  uniffi_uniffi_add_fn_func_add(
+    left: bigint,
+    right: bigint,
     uniffi_out_err: UniffiRustCallStatus
   ): bigint;
-  uniffi_foobar_fn_free_binaryoperator(
-    ptr: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): void;
-  uniffi_foobar_fn_method_binaryoperator_perform(
-    ptr: bigint,
-    lhs: bigint,
-    rhs: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): bigint;
-  uniffi_foobar_fn_clone_calculator(
-    ptr: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): bigint;
-  uniffi_foobar_fn_free_calculator(
-    ptr: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): void;
-  uniffi_foobar_fn_constructor_calculator_new(
-    uniffi_out_err: UniffiRustCallStatus
-  ): bigint;
-  uniffi_foobar_fn_method_calculator_calculate(
-    ptr: bigint,
-    op: bigint,
-    lhs: bigint,
-    rhs: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): bigint;
-  uniffi_foobar_fn_method_calculator_calculate_more(
-    ptr: bigint,
-    op: bigint,
-    rhs: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): bigint;
-  uniffi_foobar_fn_method_calculator_last_result(
-    ptr: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): ArrayBuffer;
-  uniffi_foobar_fn_clone_safeaddition(
-    ptr: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): bigint;
-  uniffi_foobar_fn_free_safeaddition(
-    ptr: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): void;
-  uniffi_foobar_fn_constructor_safeaddition_new(
-    uniffi_out_err: UniffiRustCallStatus
-  ): bigint;
-  uniffi_foobar_fn_method_safeaddition_perform(
-    ptr: bigint,
-    lhs: bigint,
-    rhs: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): bigint;
-  uniffi_foobar_fn_clone_safedivision(
-    ptr: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): bigint;
-  uniffi_foobar_fn_free_safedivision(
-    ptr: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): void;
-  uniffi_foobar_fn_constructor_safedivision_new(
-    uniffi_out_err: UniffiRustCallStatus
-  ): bigint;
-  uniffi_foobar_fn_method_safedivision_perform(
-    ptr: bigint,
-    lhs: bigint,
-    rhs: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): bigint;
-  uniffi_foobar_fn_func_safe_addition_operator(
-    uniffi_out_err: UniffiRustCallStatus
-  ): bigint;
-  uniffi_foobar_fn_func_safe_division_operator(
-    uniffi_out_err: UniffiRustCallStatus
-  ): bigint;
-  uniffi_foobar_checksum_func_safe_addition_operator(): number;
-  uniffi_foobar_checksum_func_safe_division_operator(): number;
-  uniffi_foobar_checksum_method_binaryoperator_perform(): number;
-  uniffi_foobar_checksum_method_calculator_calculate(): number;
-  uniffi_foobar_checksum_method_calculator_calculate_more(): number;
-  uniffi_foobar_checksum_method_calculator_last_result(): number;
-  uniffi_foobar_checksum_method_safeaddition_perform(): number;
-  uniffi_foobar_checksum_method_safedivision_perform(): number;
-  uniffi_foobar_checksum_constructor_calculator_new(): number;
-  uniffi_foobar_checksum_constructor_safeaddition_new(): number;
-  uniffi_foobar_checksum_constructor_safedivision_new(): number;
-  ffi_foobar_uniffi_contract_version(): number;
-  uniffi_foobar_fn_init_callback_vtable_binaryoperator(
-    vtable: UniffiVTableCallbackInterfaceBinaryOperator
-  ): void;
-  uniffi_internal_fn_method_binaryoperator_ffi__bless_pointer(
-    pointer: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): UniffiRustArcPtr;
-  uniffi_internal_fn_method_calculator_ffi__bless_pointer(
-    pointer: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): UniffiRustArcPtr;
-  uniffi_internal_fn_method_safeaddition_ffi__bless_pointer(
-    pointer: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): UniffiRustArcPtr;
-  uniffi_internal_fn_method_safedivision_ffi__bless_pointer(
-    pointer: bigint,
-    uniffi_out_err: UniffiRustCallStatus
-  ): UniffiRustArcPtr;
+  uniffi_uniffi_add_checksum_func_add(): number;
+  ffi_uniffi_add_uniffi_contract_version(): number;
 }
 
-// Casting globalThis to any allows us to look for `NativeFoobar`
+// Casting globalThis to any allows us to look for `NativeUniffiAdd`
 // if it was added via JSI.
 //
-// We use a getter here rather than simply `globalThis.NativeFoobar` so that
+// We use a getter here rather than simply `globalThis.NativeUniffiAdd` so that
 // if/when the startup sequence isn't just so, an empty value isn't inadvertantly cached.
 const getter: () => NativeModuleInterface = () =>
-  (globalThis as any).NativeFoobar;
+  (globalThis as any).NativeUniffiAdd;
 export default getter;
 
 // Structs and function types for calling back into Typescript from Rust.
@@ -260,17 +154,6 @@ export type UniffiForeignFutureCompleteVoid = (
   callbackData: bigint,
   result: UniffiForeignFutureStructVoid
 ) => void;
-type UniffiCallbackInterfaceBinaryOperatorMethod0 = (
-  uniffiHandle: bigint,
-  lhs: bigint,
-  rhs: bigint,
-  uniffiOutReturn: UniffiReferenceHolder<bigint>,
-  callStatus: UniffiRustCallStatus
-) => void;
-export type UniffiVTableCallbackInterfaceBinaryOperator = {
-  perform: UniffiCallbackInterfaceBinaryOperatorMethod0;
-  uniffiFree: UniffiCallbackInterfaceFree;
-};
 
 // UniffiRustFutureContinuationCallback is generated as part of the component interface's
 // ffi_definitions. However, we need it in the runtime.

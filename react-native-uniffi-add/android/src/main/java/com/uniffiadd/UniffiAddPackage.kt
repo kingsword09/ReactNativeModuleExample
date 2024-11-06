@@ -8,10 +8,10 @@ import com.facebook.react.module.model.ReactModuleInfo
 import com.facebook.react.module.model.ReactModuleInfoProvider
 import java.util.HashMap
 
-class MyRustLibPackage : TurboReactPackage() {
+class UniffiAddPackage : TurboReactPackage() {
   override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? {
-    return if (name == MyRustLibModule.NAME) {
-      MyRustLibModule(reactContext)
+    return if (name == UniffiAddModule.NAME) {
+      UniffiAddModule(reactContext)
     } else {
       null
     }
@@ -20,9 +20,9 @@ class MyRustLibPackage : TurboReactPackage() {
   override fun getReactModuleInfoProvider(): ReactModuleInfoProvider {
     return ReactModuleInfoProvider {
       val moduleInfos: MutableMap<String, ReactModuleInfo> = HashMap()
-      moduleInfos[MyRustLibModule.NAME] = ReactModuleInfo(
-        MyRustLibModule.NAME,
-        MyRustLibModule.NAME,
+      moduleInfos[UniffiAddModule.NAME] = ReactModuleInfo(
+        UniffiAddModule.NAME,
+        UniffiAddModule.NAME,
         false,  // canOverrideExistingModule
         false,  // needsEagerInit
         false,  // isCxxModule
