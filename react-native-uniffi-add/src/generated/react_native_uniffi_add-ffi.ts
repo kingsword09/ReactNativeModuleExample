@@ -22,22 +22,22 @@ interface NativeModuleInterface {
     buffer: ArrayBuffer,
     uniffi_out_err: UniffiRustCallStatus
   ): string;
-  uniffi_uniffi_add_fn_func_add(
+  uniffi_react_native_uniffi_add_fn_func_add(
     left: bigint,
     right: bigint,
     uniffi_out_err: UniffiRustCallStatus
   ): bigint;
-  uniffi_uniffi_add_checksum_func_add(): number;
-  ffi_uniffi_add_uniffi_contract_version(): number;
+  uniffi_react_native_uniffi_add_checksum_func_add(): number;
+  ffi_react_native_uniffi_add_uniffi_contract_version(): number;
 }
 
-// Casting globalThis to any allows us to look for `NativeUniffiAdd`
+// Casting globalThis to any allows us to look for `NativeReactNativeUniffiAdd`
 // if it was added via JSI.
 //
-// We use a getter here rather than simply `globalThis.NativeUniffiAdd` so that
+// We use a getter here rather than simply `globalThis.NativeReactNativeUniffiAdd` so that
 // if/when the startup sequence isn't just so, an empty value isn't inadvertantly cached.
 const getter: () => NativeModuleInterface = () =>
-  (globalThis as any).NativeUniffiAdd;
+  (globalThis as any).NativeReactNativeUniffiAdd;
 export default getter;
 
 // Structs and function types for calling back into Typescript from Rust.

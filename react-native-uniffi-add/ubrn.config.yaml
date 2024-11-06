@@ -1,5 +1,5 @@
 ---
-name: UniffiAdd
+name: ReactNativeUniffiAdd
 rust:
   directory: ./rust
   manifest-file: Cargo.toml

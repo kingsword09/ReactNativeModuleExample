@@ -2,7 +2,7 @@
 #include <jni.h>
 #include <jsi/jsi.h>
 #include <ReactCommon/CallInvokerHolder.h>
-#include "uniffi-add.h"
+#include "react-native-uniffi-add.h"
 
 namespace jsi = facebook::jsi;
 namespace react = facebook::react;

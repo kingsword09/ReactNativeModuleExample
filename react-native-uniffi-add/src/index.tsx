@@ -5,18 +5,18 @@ import installer from './NativeUniffiAdd';
 installer.installRustCrate();
 
 // Export the generated bindings to the app.
-export * from './generated/uniffi_add';
+export * from './generated/react_native_uniffi_add';
 
 // Now import the bindings so we can:
 // - intialize them
 // - export them as namespaced objects as the default export.
-import * as uniffi_add from './generated/uniffi_add';
+import * as react_native_uniffi_add from './generated/react_native_uniffi_add';
 
 // Initialize the generated bindings: mostly checksums, but also callbacks.
-uniffi_add.default.initialize();
+react_native_uniffi_add.default.initialize();
 
 // Export the crates as individually namespaced objects.
 export default {
-  uniffi_add,
+  react_native_uniffi_add,
 };
 

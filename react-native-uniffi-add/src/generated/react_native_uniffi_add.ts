@@ -31,7 +31,7 @@ import nativeModule, {
   type UniffiForeignFutureCompleteRustBuffer,
   type UniffiForeignFutureStructVoid,
   type UniffiForeignFutureCompleteVoid,
-} from './uniffi_add-ffi';
+} from './react_native_uniffi_add-ffi';
 import {
   type FfiConverter,
   FfiConverterInt32,
@@ -53,7 +53,7 @@ export function add(
   return FfiConverterUInt64.lift(
     rustCall(
       /*caller:*/ (callStatus) => {
-        return nativeModule().uniffi_uniffi_add_fn_func_add(
+        return nativeModule().uniffi_react_native_uniffi_add_fn_func_add(
           FfiConverterUInt64.lower(left),
           FfiConverterUInt64.lower(right),
           callStatus
@@ -126,16 +126,18 @@ function uniffiEnsureInitialized() {
   const bindingsContractVersion = 26;
   // Get the scaffolding contract version by calling the into the dylib
   const scaffoldingContractVersion =
-    nativeModule().ffi_uniffi_add_uniffi_contract_version();
+    nativeModule().ffi_react_native_uniffi_add_uniffi_contract_version();
   if (bindingsContractVersion !== scaffoldingContractVersion) {
     throw new UniffiInternalError.ContractVersionMismatch(
       scaffoldingContractVersion,
       bindingsContractVersion
     );
   }
-  if (nativeModule().uniffi_uniffi_add_checksum_func_add() !== 30561) {
+  if (
+    nativeModule().uniffi_react_native_uniffi_add_checksum_func_add() !== 32456
+  ) {
     throw new UniffiInternalError.ApiChecksumMismatch(
-      'uniffi_uniffi_add_checksum_func_add'
+      'uniffi_react_native_uniffi_add_checksum_func_add'
     );
   }
 }

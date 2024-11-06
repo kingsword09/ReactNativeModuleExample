@@ -12,7 +12,7 @@
 namespace react = facebook::react;
 namespace jsi = facebook::jsi;
 
-class NativeUniffiAdd : public jsi::HostObject {
+class NativeReactNativeUniffiAdd : public jsi::HostObject {
 private:
   // For calling back into JS from Rust.
   std::shared_ptr<uniffi_runtime::UniffiCallInvoker> callInvoker;
@@ -28,29 +28,27 @@ protected:
   jsi::Value cpp_uniffi_internal_fn_func_ffi__arraybuffer_to_string(
       jsi::Runtime &rt, const jsi::Value &thisVal, const jsi::Value *args,
       size_t count);
-  jsi::Value cpp_uniffi_uniffi_add_fn_func_add(jsi::Runtime &rt,
-                                               const jsi::Value &thisVal,
-                                               const jsi::Value *args,
-                                               size_t count);
-  jsi::Value cpp_uniffi_uniffi_add_checksum_func_add(jsi::Runtime &rt,
-                                                     const jsi::Value &thisVal,
-                                                     const jsi::Value *args,
-                                                     size_t count);
-  jsi::Value cpp_ffi_uniffi_add_uniffi_contract_version(
+  jsi::Value cpp_uniffi_react_native_uniffi_add_fn_func_add(
+      jsi::Runtime &rt, const jsi::Value &thisVal, const jsi::Value *args,
+      size_t count);
+  jsi::Value cpp_uniffi_react_native_uniffi_add_checksum_func_add(
+      jsi::Runtime &rt, const jsi::Value &thisVal, const jsi::Value *args,
+      size_t count);
+  jsi::Value cpp_ffi_react_native_uniffi_add_uniffi_contract_version(
       jsi::Runtime &rt, const jsi::Value &thisVal, const jsi::Value *args,
       size_t count);
 
 public:
-  NativeUniffiAdd(
+  NativeReactNativeUniffiAdd(
       jsi::Runtime &rt,
       std::shared_ptr<uniffi_runtime::UniffiCallInvoker> callInvoker);
-  virtual ~NativeUniffiAdd();
+  virtual ~NativeReactNativeUniffiAdd();
 
   /**
    * The entry point into the crate.
    *
-   * React Native must call `NativeUniffiAdd.registerModule(rt, callInvoker)`
-   * before using the Javascript interface.
+   * React Native must call `NativeReactNativeUniffiAdd.registerModule(rt,
+   * callInvoker)` before using the Javascript interface.
    */
   static void registerModule(jsi::Runtime &rt,
                              std::shared_ptr<react::CallInvoker> callInvoker);
@@ -61,8 +59,8 @@ public:
    * Current implementation is empty, however, this is not guaranteed to always
    * be the case.
    *
-   * Clients should call `NativeUniffiAdd.unregisterModule(rt)` after final use
-   * where possible.
+   * Clients should call `NativeReactNativeUniffiAdd.unregisterModule(rt)` after
+   * final use where possible.
    */
   static void unregisterModule(jsi::Runtime &rt);
 

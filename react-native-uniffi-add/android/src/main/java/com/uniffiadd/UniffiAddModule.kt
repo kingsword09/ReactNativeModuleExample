@@ -14,7 +14,7 @@ class UniffiAddModule(reactContext: ReactApplicationContext) :
   }
 
   // Two native methods implemented in cpp-adapter.cpp, and ultimately
-  // uniffi-add.cpp
+  // react-native-uniffi-add.cpp
 
   external fun nativeInstallRustCrate(runtimePointer: Long, callInvoker: CallInvokerHolder): Boolean
   external fun nativeCleanupRustCrate(runtimePointer: Long): Boolean
@@ -37,7 +37,7 @@ class UniffiAddModule(reactContext: ReactApplicationContext) :
     const val NAME = "UniffiAdd"
 
     init {
-      System.loadLibrary("uniffi-add")
+      System.loadLibrary("react-native-uniffi-add")
     }
   }
 }

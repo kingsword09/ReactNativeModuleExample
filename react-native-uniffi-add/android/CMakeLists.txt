@@ -24,9 +24,9 @@ include_directories(
     ${UNIFFI_BINDGEN_PATH}/cpp/includes
 )
 
-add_library(uniffi-add            SHARED
-    ../cpp/uniffi-add.cpp
-    ../cpp/generated/uniffi_add.cpp
+add_library(react-native-uniffi-add            SHARED
+    ../cpp/react-native-uniffi-add.cpp
+    ../cpp/generated/react_native_uniffi_add.cpp
     cpp-adapter.cpp
 )
 
@@ -40,7 +40,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
 
 cmake_path(
   SET MY_RUST_LIB
-  ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libuniffi_add.a
+  ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libreact_native_uniffi_add.a
   NORMALIZE
 )
 add_library(my_rust_lib STATIC IMPORTED)
@@ -59,9 +59,9 @@ endif()
 # https://github.com/react-native-community/discussions-and-proposals/discussions/816
 # This if-then-else can be removed once this library does not support version below 0.76
 if (REACTNATIVE_MERGED_SO)
-  target_link_libraries(uniffi-add ReactAndroid::reactnative)
+  target_link_libraries(react-native-uniffi-add ReactAndroid::reactnative)
 else()
-  target_link_libraries(uniffi-add
+  target_link_libraries(react-native-uniffi-add
     ReactAndroid::turbomodulejsijni
     ReactAndroid::react_nativemodule_core
   )
@@ -69,7 +69,7 @@ endif()
 
 find_package(fbjni REQUIRED CONFIG)
 target_link_libraries(
-  uniffi-add
+  react-native-uniffi-add
   fbjni::fbjni
   ReactAndroid::jsi
   ${LOGCAT}
