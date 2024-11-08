@@ -1,0 +1,17 @@
+{
+  "cxxNamespace": ["add"],
+  "ios": {
+    "iosModuleName": "NitroAdd"
+  },
+  "android": {
+    "androidNamespace": ["add"],
+    "androidCxxLibName": "NitroAdd"
+  },
+  "autolinking": {
+    "Add": {
+      "swift": "HybridAdd",
+      "kotlin": "HybridAdd"
+    }
+  },
+  "ignorePaths": ["node_modules"]
+}
