@@ -1,5 +1,5 @@
 {
-  "name": "react-native-nitro-template",
+  "name": "react-native-nitro-add",
   "version": "0.0.1",
   "description": "A template for Nitro Modules.",
   "main": "lib/index",
@@ -25,6 +25,7 @@
     "README.md"
   ],
   "scripts": {
+    "example": "yarn workspace react-native-nitro-add-example",
     "postinstall": "tsc || exit 0;",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf android/build node_modules/**/android/build lib",
@@ -74,7 +75,9 @@
       "@react-native",
       "prettier"
     ],
-    "plugins": ["prettier"],
+    "plugins": [
+      "prettier"
+    ],
     "rules": {
       "prettier/prettier": [
         "warn",
@@ -99,5 +102,9 @@
     "trailingComma": "es5",
     "useTabs": false,
     "semi": false
-  }
+  },
+  "workspaces": [
+    "example"
+  ],
+  "packageManager": "yarn@3.6.1"
 }

@@ -10,7 +10,9 @@ module.exports = {
       /**
        * @type {import('@react-native-community/cli-types').AndroidDependencyParams}
        */
-      android: {},
+      android: {
+        cmakeListsPath: 'CMakeLists.txt',
+      },
     },
   },
 }
