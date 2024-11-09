@@ -77,7 +77,7 @@ function App(): React.JSX.Element {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title={"Step One" + HybridNitroAdd.add(1, 2)}>
+          <Section title={'Step One ' + HybridNitroAdd.add(10, 2)}>
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
           </Section>

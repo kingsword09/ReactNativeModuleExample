@@ -4,4 +4,4 @@ import type { Add } from './specs/Add.nitro'
 export * from './specs/Add.nitro'
 
 export const HybridNitroAdd =
-  NitroModules.createHybridObject<Add>('NitroAdd')
+  NitroModules.createHybridObject<Add>('Add')

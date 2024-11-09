@@ -4,7 +4,3 @@ extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autoli
 rootProject.name = 'example'
 include ':app'
 includeBuild('../node_modules/@react-native/gradle-plugin')
-//include 'react-native-nitro-modules'
-//project(":react-native-nitro-modules").projectDir = file("../node_modules/react-native-nitro-modules/android")
-//include 'react-native-nitro-add'
-//project(":react-native-nitro-add").projectDir = file("../../android")

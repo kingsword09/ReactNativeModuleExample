@@ -104,7 +104,8 @@
     "semi": false
   },
   "workspaces": [
-    "example"
+    "example",
+    "react-native-nitro-add"
   ],
   "packageManager": "yarn@3.6.1"
 }
