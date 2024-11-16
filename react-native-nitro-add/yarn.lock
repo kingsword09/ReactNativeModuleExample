@@ -8557,13 +8557,14 @@ __metadata:
     prettier: 2.8.8
     react: 18.3.1
     react-native: 0.76.1
+    react-native-nitro-add: "workspace:*"
     react-native-nitro-modules: ^0.15.0
     react-test-renderer: 18.3.1
     typescript: 5.0.4
   languageName: unknown
   linkType: soft
 
-"react-native-nitro-add@workspace:.":
+"react-native-nitro-add@workspace:*, react-native-nitro-add@workspace:.":
   version: 0.0.0-use.local
   resolution: "react-native-nitro-add@workspace:."
   dependencies:
